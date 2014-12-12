@@ -50,7 +50,7 @@ if __name__ == "__main__":
 	process = multiprocessing.Process( target=process_bed_files,
 					 	 args=(filepath_we, script_path, plink_path, outDir))
 	process.bf = bf
-	processes.append()
+	processes.append(process)
 
     for process in processes:
 	process.start()
