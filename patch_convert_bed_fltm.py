@@ -47,8 +47,10 @@ if __name__ == "__main__":
     processes = []
     for bf in get_bed_files(inDir):
 	filepath_we = os.path.join(inDir, bf)
-	processes.append(multiprocessing.Process( target=process_bed_files,
-					 	 args=(filepath_we, script_path, plink_path, outDir)))
+	process = multiprocessing.Process( target=process_bed_files,
+					 	 args=(filepath_we, script_path, plink_path, outDir))
+	process.bf = bf
+	processes.append()
 
     for process in processes:
 	process.start()
